@@ -4,7 +4,6 @@ import com.anton31413.model.Company;
 import com.anton31413.model.Role;
 import com.anton31413.model.User;
 import com.anton31413.util.HibernateConfig;
-import com.anton31413.util.LoggerConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,8 +14,8 @@ import java.time.Month;
 @Slf4j
 public class Runner {
     public static void main(String[] args) {
-        LoggerConfig.configure();
-        try(SessionFactory sessionFactory = HibernateConfig.buildSessionFactory()){
+       // LoggerConfig.configure();
+        try(SessionFactory sessionFactory = HibernateConfig.getSessionFactory()){
             Session session = sessionFactory.openSession();
             session.beginTransaction();
 
